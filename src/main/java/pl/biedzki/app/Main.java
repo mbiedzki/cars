@@ -13,7 +13,7 @@ import java.util.List;
 public class Main {
 
     //buffer to be entered with user data and then written to database
-    public static List<Car> buffer = Collections.synchronizedList(new ArrayList<Car>());
+    public static List<Car> buffer = Collections.synchronizedList(new ArrayList<>());
 
     public static void main(String[] args) {
 
@@ -26,4 +26,6 @@ public class Main {
         threadOfConsoleService.start();
 
     }
+
+
 }
