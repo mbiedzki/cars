@@ -1,17 +1,35 @@
 package pl.biedzki.model;
 
+import org.hibernate.validator.constraints.NotBlank;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name = "cars")
 public class Car {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotBlank
     private String producer;
+
+    @NotBlank
     private String model;
+
+    @Column(precision = 4, scale = 2)
+    @NotNull
     private Double capacity;
 
     public Car (String producer, String model, Double capacity) {
         this.producer = producer;
         this.model = model;
         this.capacity = capacity;
+    }
+
+    public Car() {
     }
 
     public Long getId() {

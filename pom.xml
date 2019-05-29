@@ -8,5 +8,62 @@
     <artifactId>cars</artifactId>
     <version>1.0</version>
 
+    <packaging>war</packaging>
+    <build>
+        <finalName>cars</finalName>
+    </build>
+
+    <properties>
+        <org.springframework.version>4.3.7.RELEASE</org.springframework.version>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.2.9.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>4.3.7.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.46</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.activation</groupId><artifactId>activation</artifactId>
+            <version>1.1.1</version></dependency>
+        <dependency>
+            <groupId>javax.xml.bind</groupId><artifactId>jaxb-api</artifactId>
+            <version>2.3.0</version></dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId><artifactId>jaxb-core</artifactId>
+            <version>2.3.0</version></dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId><artifactId>jaxb-impl</artifactId>
+            <version>2.3.0</version></dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.4.1.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>1.11.20.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-c3p0</artifactId>
+            <version>5.3.6.Final</version>
+        </dependency>
+    </dependencies>
+
 
 </project>

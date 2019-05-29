@@ -63,13 +63,47 @@ public class ConsoleService implements Runnable {
     }
 
     public void addCar() {
-        System.out.println(Main.buffer);
-        run();
+
+        System.out.println("podaj producenta (Z dużej litery, bez spacji) : ");
+        String producerToBeAdded = getLine();
+        while (!producerToBeAdded.matches("^[A-Z]\\S*$")) {
+            System.out.println("podaj producenta (Z dużej litery, bez spacji) : ");
+            producerToBeAdded = getLine();
+        }
+        System.out.println(producerToBeAdded);
+
+        System.out.println("podaj model (przynajmniej jedna cyfra lub litera) : ");
+        String modelToBeAdded = getLine();
+        while (!modelToBeAdded.matches("^[A-Za-z0-9]+")) {
+            System.out.println("podaj model (przynajmniej jedna cyfra lub litera) : ");
+            modelToBeAdded = getLine();
+        }
+        System.out.println(modelToBeAdded);
+
+        System.out.println("podaj pojemność silnika (cyfry . cyfry) : ");
+        String capacityToBeAdded = getLine();
+        while (!capacityToBeAdded.matches("^\\d+\\.{1}\\d+\\S*$")) {
+            System.out.println("podaj pojemność silnika (cyfry . cyfry) : ");
+            capacityToBeAdded = getLine();
+        }
+        System.out.println(capacityToBeAdded);
+
+        //run();
     }
 
     public void quitApp() {
         System.out.println("App terminated by user");
         System.exit(0);
+
+    }
+
+    public String getLine() {
+        //collect producer input
+        Scanner scanner = new Scanner(System.in);
+        while (!scanner.hasNextLine()) {
+            scanner = new Scanner(System.in);
+        }
+        return scanner.nextLine();
 
     }
 }
