@@ -11,7 +11,7 @@ public class BufferCleanerService implements Runnable {
     public void run() {
         TimerTask cleanBuffer = new TimerTask() {
             public void run() {
-                System.out.println("Todo buffer action");
+               // System.out.println("Todo buffer action");
             }
         };
 
