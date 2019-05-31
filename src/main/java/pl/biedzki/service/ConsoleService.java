@@ -63,8 +63,7 @@ public class ConsoleService implements Runnable {
         String query = "select * from cars;";
 
         try (Connection conn = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/cars?useSSL=false&characterEncoding=utf8",
-                "root", "coderslab")) {
+                Main.mySqlUrl, Main.mySqlUser, Main.mySqlPassword)) {
 
             PreparedStatement preparedStatement = conn.prepareStatement(query);
             ResultSet resultSet = preparedStatement.executeQuery();

@@ -16,11 +16,11 @@ public class BufferCleanerService implements Runnable {
     public void run() {
         TimerTask cleanBuffer = new TimerTask() {
             public void run() {
-                //if buffer not empty than write to db and clean buffer
+                //if buffer not empty than write to db and clean
+                // buffer
                 if(Main.buffer.size()!=0) {
                         try (Connection conn = DriverManager.getConnection(
-                                "jdbc:mysql://localhost:3306/cars?useSSL=false&characterEncoding=utf8",
-                                "root", "coderslab")) {
+                                Main.mySqlUrl, Main.mySqlUser, Main.mySqlPassword)) {
 
                             String sql = "insert into cars values(null, ?, ?, ?)";
 
